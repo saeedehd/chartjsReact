@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
-import "chartjs-plugin-lineheight-annotation";
 
 class App extends Component {
  constructor(props){
@@ -23,9 +22,7 @@ class App extends Component {
      }
    }
  } 
- componentDidMount()  {
-   console.log(this.state.data);
- }
+
  setGradientColor = (canvas, color) => {
    const ctx = canvas.getContext('2d');
    const gradient = ctx.createLinearGradient(0, 0, 600, 550);
@@ -52,14 +49,7 @@ class App extends Component {
       <h3>Chart Sample</h3>
       <Line
       options={{
-        responsive: true,
-        lineHeightAnnotation: {
-          color: "white",
-          shadow: true,
-          always: false,
-          hover: true,
-          noDash: true,
-        }
+        responsive: true
       }}
       data={this.getChartData}
       />
